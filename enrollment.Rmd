@@ -1,0 +1,24 @@
+---
+title: "Course Enrollment"
+author: "Hoda Abdalla"
+date: "9/19/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(tidyverse)
+library(readxl)
+library(janitor)
+```
+
+```{r}
+x <- read_excel("raw-data/class_enrollment_summary_by_term_9.19.19.xlsx", skip = 3)
+
+x %>%
+  clean_names() %>%
+  filter(course_department == "English") %>%
+  arrange(desc(total)) %>%
+  select(course_department, course_name, total) %>%
+  head(1)
+```
