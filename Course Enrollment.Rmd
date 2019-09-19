@@ -1,0 +1,22 @@
+---
+title: "Course Enrollment"
+author: "Hoda Abdalla"
+date: "9/19/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+```
+
+```{r}
+enrollment <- read_xlsx("class_enrollment_summary_by_term_9.19.19.xlsx")
+
+enrollment %>%
+  filter(co)
+
+```
+
+
